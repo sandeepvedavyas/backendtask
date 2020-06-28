@@ -177,6 +177,7 @@ Response -
 
 7. DELETE - http://localhost:8080/users/3
 
+
 	{
     "status": 200,
     "message": "User has been deleted successfully"
