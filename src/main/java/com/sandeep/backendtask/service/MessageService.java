@@ -21,10 +21,4 @@ public interface MessageService {
 	List<Message> findAllByReceiverId(Long receiverId);
 
 	List<Message> getAll();
-
-
-	//void receiveMessage(MessageDto customMessage);
-
-	//void receiveMessage(org.springframework.amqp.core.Message message);
-
 }

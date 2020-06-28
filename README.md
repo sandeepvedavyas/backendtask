@@ -40,7 +40,7 @@ This will start a docker container based on the sonarqube image and give it the 
 
 ### Below is the latest screenshot of code coverage of this assignment ###
 
-![](latest-code-coverage-report.PNG)
+![](document-images/latest-code-coverage-report.PNG)
 
 ### Application workflow testing ###
 1. Run clean package -Dmaven.test.skip=true
@@ -53,11 +53,11 @@ http://localhost:8080/actuator/info
 
 http://localhost:8080/swagger-ui.html
 
-![](swaggerimage.PNG)
+![](document-images/swaggerimage.PNG)
 
-![](swaggerimage2.PNG)
+![](document-images/swaggerimage2.PNG)
 
-![](swaggerimage3-user-post.PNG)
+![](document-images/swaggerimage3-user-post.PNG)
 
 Sample API details with custom model object details 
 
@@ -206,9 +206,11 @@ a. Request -
 	"senderId": 1,
 	"receiverId": 2
 	}
+Response - 201 Created
+ 
 Below you can notice the generic and custom message object sent over the RabbitMq queue system and printed into console by listner.
-  ![](RabbitMqmessage.PNG)
-Response - 201 Created 
+
+![](document-images/RabbitMqmessage.PNG)
 
 b. Try sending message to yourself- http://localhost:8080/messages/
 
