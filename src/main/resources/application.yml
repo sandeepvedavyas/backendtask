@@ -1,0 +1,97 @@
+server:
+    port: 8080
+#Spring boot actuators matrix info
+info:
+  app:
+    description: '@project.description@'
+    encoding: '@project.build.sourceEncoding@'
+    java:
+      version: '@java.version@'
+    name: '@project.name@'
+    version: '@project.version@'
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      exposure:
+        include: 'health,info'
+
+# default profile
+spring:
+  profiles:
+    active: development
+---
+spring:
+  profiles: development
+  datasource:
+    initialization-mode: always
+    password: password
+    platform: postgres
+    url: 'jdbc:postgresql://dbpostgresql:5432/backendtask'
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+  rabbitmq:
+    host: rabbitmq
+    password: guest
+    user:
+      name: guest
+  
+---
+spring:
+  profiles: test
+  datasource:
+    initialization-mode: always
+    password: password
+    platform: postgres
+    url: 'jdbc:postgresql://dbpostgresql:5432/backendtask'
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+  rabbitmq:
+    host: rabbitmq
+    password: guest
+    user:
+      name: guest
+---
+spring:
+  profiles: production
+  datasource:
+    initialization-mode: always
+    password: password
+    platform: postgres
+    url: 'jdbc:postgresql://dbpostgresql:5432/backendtask'
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+    show-sql: true
+  rabbitmq:
+    host: rabbitmq
+    password: guest
+    user:
+      name: guest
